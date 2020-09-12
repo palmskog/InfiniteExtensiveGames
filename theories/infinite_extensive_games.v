@@ -646,9 +646,9 @@ cut (evenLTL (<< a', l, sl', sr' >>) /\ evenLTL (<< a', r, sr', sl' >>)).
 intros and.
 split.
 apply ELtL_LL.
-decompose [and] and. assumption.
+destruct and; assumption.
 apply ELtL_RL.
-decompose [and] and. assumption.
+destruct and; assumption.
 apply IHeven_s.
 
 intros a0 s'.
@@ -656,9 +656,9 @@ cut (evenLTL (<< a', r, sl', sr' >>) /\ evenLTL (<< a', l, sr', sl' >>)).
 intros and.
 split.
 apply ELtL_LL.
-decompose [and] and. assumption.
+destruct and; assumption.
 apply ELtL_RL.
-decompose [and] and. assumption.
+destruct and; assumption.
 cut (evenLTL (<< a', l, sr', sl' >> )/\evenLTL(<< a', r, sl', sr' >>) ).
 intuition.
 apply IHeven_s.
@@ -680,7 +680,7 @@ cut (evenLTL (<<a',r,sl',sr'>>) ).
 intros and.
 split.
 apply ELtL_LR.
-decompose [and] and. assumption.
+assumption.
 apply ELtL_RR.
 assumption.
 cut (evenLTL (<< a', l, sr', sl' >> )/\evenLTL(<< a', r, sl', sr' >>) ).

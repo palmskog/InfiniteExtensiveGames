@@ -22,19 +22,17 @@ Require Import Arith.
 Require Import Omega.
 Require Import Even.
 Require Import Div2.
-(* begin hide *) 
-Add LoadPath ".". 
-(* end hide *)
+
 Require Import infinite_extensive_games.
 Require Import Le.
 
-Implicit Arguments sLeaf [Agent Utility].
-Implicit Arguments sNode [Agent Utility].
-Implicit Arguments s2u [Agent Utility].
-Implicit Arguments LeadsToLeaf [Agent Utility].
-Implicit Arguments AlwLeadsToLeaf [Agent Utility].
-Implicit Arguments SGPE [Agent Utility].
-Implicit Arguments NashEq [Agent Utility]. 
+Arguments sLeaf [Agent Utility].
+Arguments sNode [Agent Utility].
+Arguments s2u [Agent Utility].
+Arguments LeadsToLeaf [Agent Utility].
+Arguments AlwLeadsToLeaf [Agent Utility].
+Arguments SGPE [Agent Utility].
+Arguments NashEq [Agent Utility]. 
 
         (*  -----------------  *)
         (** -  Data and tools  *)

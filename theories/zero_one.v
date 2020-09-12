@@ -21,23 +21,21 @@ Require Import Arith.
 Require Import Omega.
 Require Import Even.
 Require Import Div2.
-(* begin hide *) 
-Add LoadPath ".". 
-(* end hide *)
+
 Require Import infinite_extensive_games.
 Require Import dollar_auction.
 Require Import Le.
 
-Implicit Arguments sLeaf [Agent Utility].
-Implicit Arguments sNode [Agent Utility].
-Implicit Arguments s2u [Agent Utility].
-Implicit Arguments LeadsToLeaf [Agent Utility].
-Implicit Arguments AlwLeadsToLeaf [Agent Utility].
-Implicit Arguments SGPE [Agent Utility].
-Implicit Arguments NashEq [Agent Utility]. 
-Implicit Arguments gLeaf [Agent Utility].
-Implicit Arguments gNode [Agent Utility].
-Implicit Arguments s2g [Agent Utility].
+Arguments sLeaf [Agent Utility].
+Arguments sNode [Agent Utility].
+Arguments s2u [Agent Utility].
+Arguments LeadsToLeaf [Agent Utility].
+Arguments AlwLeadsToLeaf [Agent Utility].
+Arguments SGPE [Agent Utility].
+Arguments NashEq [Agent Utility]. 
+Arguments gLeaf [Agent Utility].
+Arguments gNode [Agent Utility].
+Arguments s2g [Agent Utility].
 
         (*  -----------------  *)
         (** -  Data and tools  *)
@@ -347,7 +345,6 @@ apply StratProf_decomposition.
 Qed.
 
 Definition test_even (n:nat) : {even n} + {odd n}.
-intro n.
 elim n.
 left.
 apply even_O.
