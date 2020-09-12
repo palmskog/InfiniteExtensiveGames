@@ -1,14 +1,14 @@
 (* Time-stamp: "modifie le 28 Dec 2010 a 07:19 par Pierre Lescanne on boucherotte" *)
-(********************************************************************************)
+(* **************************************************************************** *)
 (*                          dollar_auction.v                                    *)
 (*                                                                          	*)
-(**            © Pierre Lescanne  (February 2008)            	                *)
+(*            copyright Pierre Lescanne  (February 2008)     	                *)
 (*                                                                          	*)
 (*		       LIP (ENS-Lyon, CNRS, INRIA) 				*)
 (*                                                                          	*)
 (*                                                                          	*)
-(** Developed in V8.1                                        June-August  2009  *)
-(********************************************************************************)
+(* Developed in V8.1                                        June-August  2009   *)
+(* **************************************************************************** *)
 Section dollar_auction.
 
         (*  ---------------  *)

@@ -1,14 +1,14 @@
 (* Time-stamp: "modifie le 29 Dec 2010 a 19:52 par Pierre Lescanne on boucherotte" *)
-(********************************************************************************)
+(* **************************************************************************** *)
 (*                         infinite_extensive_games.v                           *)
 (*                                                                          	*)
-(**                 © Pierre Lescanne  (February 2008)                          *)
+(*                 copyright Pierre Lescanne  (February 2008)                   *)
 (*                                                                          	*)
 (*		       LIP (ENS-Lyon, CNRS, INRIA) 				*)
 (*                                                                          	*)
 (*                                                                          	*)
-(** Developed in V8.1                           February 2008 --- January 2009  *)
-(********************************************************************************)
+(* Developed in V8.1                           February 2008 --- January 2009   *)
+(* **************************************************************************** *)
 Section InfiniteExtensiveGames.
 
         (*  -------------- *)
