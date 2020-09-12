@@ -14,17 +14,17 @@
         (** * Preliminaries  *)
         (*  ---------------  *)
 
-
 Set Implicit Arguments.
+
 Require Import Relations.
 Require Import Arith.
-Require Import Omega.
+Require Import Lia.
 Require Import Even.
 Require Import Div2.
+Require Import Le.
 
 Require Import infinite_extensive_games.
 Require Import dollar_auction.
-Require Import Le.
 
 Arguments sLeaf [Agent Utility].
 Arguments sNode [Agent Utility].
@@ -174,7 +174,7 @@ apply s2uLeaf with (a:=Bob)(f:=fun a : Alice_Bob =>
          | Alice => 0
          | Bob => 1
          end).
-omega.
+lia.
 apply SGPE_leaf.
 apply s2uRight.
 apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
@@ -187,7 +187,7 @@ apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
          | Alice => 1
          | Bob => 0
          end).
-omega.
+lia.
 rewrite <- StratProf_decomposition; trivial.
 Qed.
 
@@ -289,7 +289,7 @@ apply s2uLeaf with (a:=Bob)(f:=fun a : Alice_Bob =>
          | Alice => 0
          | Bob => 1
          end).
-omega.
+lia.
 apply SGPE_leaf.
 apply s2uLeft.
 apply S2u_z1AsBc_Alice.
@@ -298,7 +298,7 @@ apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
          | Alice => 1
          | Bob => 0
          end).
-omega.
+lia.
 rewrite <- StratProf_decomposition; trivial.
 Qed.
 
@@ -453,7 +453,7 @@ apply Z1_odd_z1AcBs.
 replace (m+1) with (S m).
 apply odd_S.
 trivial.
-omega.
+lia.
 (* case odd m *)
 intro.
 exists z1AsBc.
@@ -480,12 +480,12 @@ apply s2uLeaf with (a:= Bob) (f:= (
     | Alice => 0
     | Bob => 1
     end )).
-omega.
+lia.
 apply Z1_even_z1AsBc.
 replace (m+1) with (S m).
 apply even_S.
 trivial.
-omega.
+lia.
 Qed.
 
 Theorem Zero_one_game_has_an_escalation: 

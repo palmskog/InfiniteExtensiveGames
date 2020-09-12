@@ -9,6 +9,16 @@
 (*                                                                          	*)
 (* Developed in V8.1                                        June-August  2009   *)
 (* **************************************************************************** *)
+
+Require Import Relations.
+Require Import Arith.
+Require Import Lia.
+Require Import Even.
+Require Import Div2.
+Require Import Le.
+
+Require Import infinite_extensive_games.
+
 Section dollar_auction.
 
         (*  ---------------  *)
@@ -17,14 +27,6 @@ Section dollar_auction.
 
 
 Set Implicit Arguments.
-Require Import Relations.
-Require Import Arith.
-Require Import Omega.
-Require Import Even.
-Require Import Div2.
-
-Require Import infinite_extensive_games.
-Require Import Le.
 
 Arguments sLeaf [Agent Utility].
 Arguments sNode [Agent Utility].
@@ -214,7 +216,7 @@ apply s2uLeaf with (a:=Bob)(f:=fun a : Alice_Bob =>
          | Alice => n+1
          | Bob => v+n
          end).
-omega.
+lia.
 apply SGPE_leaf.
 apply s2uRight.
 apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
@@ -228,7 +230,7 @@ apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
          | Bob => n
          end).
 cut (v>0).
-omega.
+lia.
 apply v_pos.
 rewrite <- StratProf_decomposition; trivial.
 Qed.
@@ -336,7 +338,7 @@ apply s2uLeaf with (a:=Bob)(f:=fun a : Alice_Bob =>
          | Bob => v+n
          end).
 cut (v>0).
-omega.
+lia.
 apply v_pos.
 apply SGPE_leaf.
 apply s2uLeft.
@@ -347,7 +349,7 @@ apply s2uLeaf with (a:=Alice)(f:=fun a : Alice_Bob =>
          | Bob => n
          end).
 cut (v>0).
-omega.
+lia.
 apply v_pos.
 rewrite <- StratProf_decomposition; trivial.
 Qed.
@@ -462,7 +464,7 @@ unfold not.
 unfold NashEq.
 intros.
 cut (1 >= v).
-omega.
+lia.
 apply H0 with (a:=Alice)(s':=dolAsBs_0').
 apply conv_dolAsBs.
 apply S2u_dolAsBs_0'_Alice.

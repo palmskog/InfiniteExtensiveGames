@@ -17,13 +17,13 @@
 Set Implicit Arguments.
 Require Import Relations.
 Require Import Arith.
-Require Import Omega.
+Require Import Lia.
 Require Import Even.
 Require Import Div2.
+Require Import Le.
 
 Require Import infinite_extensive_games.
 Require Import dollar_auction.
-Require Import Le.
 
 Arguments sLeaf [Agent Utility].
 Arguments sNode [Agent Utility].
@@ -228,12 +228,12 @@ apply DG_odd_dolAcBs.
 replace (m+1) with (S m).
 apply odd_S.
 trivial.
-omega.
+lia.
 apply sym_eq.
 replace (m+1) with (S m).
 apply even_div2.
 trivial.
-omega.
+lia.
 (* case odd m *)
 intro.
 exists (dolAsBc v ((div2 m)+1)).
@@ -261,7 +261,7 @@ apply s2uLeaf with (a:= Bob) (f:= (
     | Bob => v + div2 m
     end )).
 cut (v>0).
-omega.
+lia.
 apply v_pos.
 
 replace (div2 m +1) with (div2 (m+1)).
@@ -269,14 +269,14 @@ apply DG_even_dolAsBc.
 replace (m+1) with (S m).
 apply even_S.
 trivial.
-omega.
+lia.
 replace (div2 m +1) with (S (div2 m)).
 apply sym_eq.
 replace (m+1) with (S m).
 apply odd_div2.
 trivial.
-omega.
-omega.
+lia.
+lia.
 Qed.
 
 Theorem Dollar_game_has_an_escalation: 

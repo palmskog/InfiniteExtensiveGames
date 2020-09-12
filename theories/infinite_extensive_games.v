@@ -9,14 +9,15 @@
 (*                                                                          	*)
 (* Developed in V8.1                           February 2008 --- January 2009   *)
 (* **************************************************************************** *)
+
+Require Import Relations.
+Require Import Classical.
+
 Section InfiniteExtensiveGames.
 
         (*  -------------- *)
         (** - Requirements *)
         (*  -------------- *)
-
-Require Import Relations.
-Require Import Omega.
         (** * Agents, utilities, preference, choices *)
 Variable Agent : Set.
 Variable Utility: Set.
@@ -526,7 +527,6 @@ apply not_LtL_s.
 apply LtLRight. assumption.
 Qed.
 
-Require Import Classical.
 Lemma not_hasInfiniteHistory_then_LeadsToLeaf: forall s: StratProf,
 ~hasInfiniteHistory s -> LeadsToLeaf s.
 Proof.
