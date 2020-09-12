@@ -19,13 +19,14 @@ Section InfiniteExtensiveGames.
         (** - Requirements *)
         (*  -------------- *)
         (** * Agents, utilities, preference, choices *)
-Variable Agent : Set.
-Variable Utility: Set.
-Variable preference: relation Utility.  Infix "=<" := preference (at level 100).
+Variable Agent : Type.
+Variable Utility : Type.
+Variable preference: relation Utility.
+Infix "=<" := preference (at level 100).
 Hypothesis preference_is_preorder: preorder Utility preference.
 Hypothesis nonTrivialUtility: exists x: Utility, exists y: Utility, x <> y.
 Definition Utility_fun := Agent -> Utility.
-Inductive Choice : Set := | l | r. 
+Inductive Choice : Set := | l | r.
 
         (*  ----------------- *)
         (** *    Histories    *)
@@ -35,7 +36,7 @@ CoInductive History: Set :=
 | HNil: History
 | HCons: Choice -> History -> History.
 
-CoInductive hBisimilar:History  ->History -> Prop :=
+CoInductive hBisimilar:History -> History -> Prop :=
 | bisim_HNil:hBisimilar HNil HNil
 | bisim_HCons: forall (a:Choice)(h h':History),
   hBisimilar h h' -> hBisimilar (HCons a h) (HCons a h').
@@ -58,7 +59,7 @@ Qed.
         (** *   Games      *)
         (*  -------------- *)
 
-CoInductive Game : Set :=
+CoInductive Game : Type :=
 | gLeaf:  Utility_fun -> Game
 | gNode : Agent -> Game -> Game -> Game.
 
@@ -153,7 +154,7 @@ CoInductive uf_of_h_in_g: Utility_fun -> History -> Game -> Prop :=
         (*  -------------- *)
 
 
-CoInductive StratProf : Set :=
+CoInductive StratProf : Type :=
 | sLeaf : Utility_fun -> StratProf
 | sNode : Agent -> Choice -> StratProf -> StratProf -> StratProf.
 
