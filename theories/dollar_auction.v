@@ -19,14 +19,13 @@ Require Import Le.
 
 Require Import infinite_extensive_games.
 
+Set Implicit Arguments.
+
 Section dollar_auction.
 
         (*  ---------------  *)
         (** * Preliminaries  *)
         (*  ---------------  *)
-
-
-Set Implicit Arguments.
 
 Arguments sLeaf [Agent Utility].
 Arguments sNode [Agent Utility].
@@ -92,7 +91,7 @@ Qed.
 
 Variable v:nat.
 
-Axiom v_pos: v > 0.
+Hypothesis v_pos: v > 0.
 
 (*  This game is more realistically associated with the dollar auction game 
 

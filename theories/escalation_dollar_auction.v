@@ -9,12 +9,11 @@
 (*                                                                          	*)
 (* Developed in V8.1                                        June-August  2009   *)
 (* **************************************************************************** *)
+
         (*  ---------------  *)
         (** * Preliminaries  *)
         (*  ---------------  *)
 
-
-Set Implicit Arguments.
 Require Import Relations.
 Require Import Arith.
 Require Import Lia.
@@ -24,6 +23,10 @@ Require Import Le.
 
 Require Import infinite_extensive_games.
 Require Import dollar_auction.
+
+Set Implicit Arguments.
+
+Section escalation_dollar_auction.
 
 Arguments sLeaf [Agent Utility].
 Arguments sNode [Agent Utility].
@@ -58,7 +61,7 @@ Notation "g =gbis= g'" := (gBisimilar Alice_Bob nat g g') (at level 80).
 (* ---------------------------------- *)
 
 Variable v:nat.
-Axiom v_pos: v > 0.
+Hypothesis v_pos: v > 0.
 
 Definition add_Alice_Bob_dol_game (n:nat) (g:Game Alice_Bob nat) :=
 gNode Alice (gNode Bob g ([[n+1, v+n]])) ([[v+n,n]]).
@@ -222,7 +225,7 @@ apply gBis_refl.
 intros. 
 elim not_even_and_odd with (n:=m); trivial.
 rewrite <- dolAcBs_decomposition.
-apply SGPE_dol_Ac_Bs.
+apply SGPE_dol_Ac_Bs; apply v_pos.
 replace (div2 m) with (div2 (m + 1)).
 apply DG_odd_dolAcBs.
 replace (m+1) with (S m).
@@ -251,7 +254,7 @@ apply ALtL_then_LtL.
 apply AlwLeadsToLeaf_dolAsBc.
 apply AlwLeadsToLeaf_dolAsBc.
 apply ALtLeaf.
-apply SGPE_dol_As_Bc.
+apply SGPE_dol_As_Bc; apply v_pos.
 apply SGPE_leaf.
 apply S2u_dolAsBc_Bob.
 apply s2uLeaf with (a:= Bob) (f:= (
@@ -294,3 +297,5 @@ elim not_even_and_odd with (n:=0).
 apply even_O.
 assumption.
 Qed.
+
+End escalation_dollar_auction.
