@@ -1,0 +1,6 @@
+-R theories InfiniteExtensiveGames
+
+theories/infinite_extensive_games.v
+theories/dollar_auction.v
+theories/escalation_dollar_auction.v
+theories/zero_one.v
